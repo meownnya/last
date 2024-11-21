@@ -72,10 +72,8 @@
         <a href="#" class="nav-link">Your memories !!</a>
         <form action="{{ route('search')}}" method="GET">
           <div class="form-input">
-            <input type="search" placeholder="Search..." />
-            <button type="submit" class="search-btn">
-              <i class="bx bx-search"></i>
-            </button>
+            <input type="text" name="query" placeholder="Search..." value="{{ request('query') }}" class="form-control search-input">
+            <button type="submit" class="btn btn-search"><i class="bi bi-search"></i></button>
           </div>
         </form>
         {{-- <input type="checkbox" id="switch-mode" hidden />

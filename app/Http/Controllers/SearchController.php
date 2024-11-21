@@ -17,11 +17,11 @@ class SearchController extends Controller
         // Contoh pencarian di beberapa model
         $photos = Photo::where('title', 'LIKE', "%{$query}%")->get();
         $videos = Video::where('title', 'LIKE', "%{$query}%")->get();
-        $audios = Audio::where('title', 'LIKE', "%{$query}%")->get();
+        $audio = Audio::where('title', 'LIKE', "%{$query}%")->get();
         $diary = Diary::where('title', 'LIKE', "%{$query}%")->get();
 
         // Kirim hasil ke view
-        return view('search.results', compact('photos', 'videos', 'query'));
+        return view('search.results', compact('photos', 'videos', 'audio', 'diary', 'query'));
     }
 }
 
